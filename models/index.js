@@ -1,7 +1,7 @@
 const { Client } = require('pg');
 const User = require('./User');
-const config = require('../configs/db.json');
 const Phone = require('./Phone');
+const config = require('../configs/db.json');
 
 const client = new Client(config);
 

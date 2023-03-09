@@ -2,8 +2,8 @@
   "baseURL": "https://randomuser.me/api/",
   "get":{
     "users":{
-      "results":50,
-      "seed":"api_key",
+      "results":150,
+      "seed":"api_key_fm",
       "page":1,
       "nat":"gb"
     }
