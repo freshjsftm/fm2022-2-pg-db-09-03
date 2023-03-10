@@ -101,3 +101,21 @@ WHERE "firstName" ILIKE 'a%' AND "lastName" ILIKE 's%';
 SELECT "id", "firstName", "lastName"
 FROM "users"
 WHERE "firstName" SIMILAR TO '(A|B)%';
+
+
+
+--знайти кількість символів(length) в пошті, яка починається з букви w, сгрупувати їх за кількістю(count), показати тількі ті групи, де кількість символів більше 25
+SELECT length("email") AS "length"
+FROM "users"
+WHERE "email" ILIKE 'a%' AND length("email")>25
+GROUP BY "length";
+
+
+--відсіяти непопулярні групи
+SELECT length("email") AS "length", count("id")
+FROM "users"
+WHERE "email" ILIKE 'a%'
+GROUP BY "length"
+HAVING count("id")>1;
+
+

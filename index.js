@@ -11,11 +11,11 @@ start();
 async function start(){
   await client.connect();
 
-  const resetDbQueryString = await fs.readFile(
-    path.join(__dirname, '/sql/reset-db-query.sql'),'utf8'
-  );
+  // const resetDbQueryString = await fs.readFile(
+  //   path.join(__dirname, '/sql/reset-db-query.sql'),'utf8'
+  // );
 
-  await client.query(resetDbQueryString);
+  // await client.query(resetDbQueryString);
 
   const {rows:users} = await User.bulkCreate(await loadUsers());
   const phones = await Phone.bulkCreate(generatePhones());
